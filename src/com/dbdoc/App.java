@@ -26,8 +26,8 @@ import picocli.CommandLine;
  * @author hoolo
  *
  */
-public class PoiMain {
-	public static final Logger log = Logger.getLogger(PoiMain.class);
+public class App {
+	public static final Logger log = Logger.getLogger(App.class);
 	public static final String template_file = "template/doc.xml";
 	public static final String out_dir = "c:\\doc\\dbdoc.docx";
 

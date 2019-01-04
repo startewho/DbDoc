@@ -20,14 +20,14 @@ import com.dbdoc.utils.FreemarkerUtils;
  *
  * @date 2011-11-23
  */
-public class ExcelMain {
+public class ExcelCommand {
 	public static final Logger log = Logger.getLogger(ExcelMain.class);
 	
 	//特别提醒：xls模板中行数必须足够大，ss:ExpandedRowCount="24000",否则生成的文件打开不了
 	public static final String template_file = "template/excel.xml";
 	public static final String out_dir = "c:\\doc\\dbdoc.xls";
 
-	public static void main(String args[]) throws IOException {
+	public  void Action() throws IOException {
 		Map propMap = new HashMap();
 		try {
 			List tables = TableProvider.getInstance().getAllTables();

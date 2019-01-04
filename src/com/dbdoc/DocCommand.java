@@ -20,12 +20,12 @@ import com.dbdoc.utils.FreemarkerUtils;
  *
  * @date 2011-11-23
  */
-public class DocMain {
+public class DocCommand {
 	public static final Logger log = Logger.getLogger(DocMain.class);
 	public static final String template_file = "template/doc.xml";
 	public static final String out_dir = "c:\\doc\\dbdoc.doc";
 
-	public static void main(String args[]) throws IOException {
+	public  void Action(String args[]) throws IOException {
 		Map propMap = new HashMap();
 		try {
 			List tables = TableProvider.getInstance().getAllTables();
