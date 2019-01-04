@@ -51,7 +51,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -85,7 +84,6 @@
 								<include>**/*.properties</include>
 							</includes>
 						</resource>
-
 					</resources>
 				</configuration>
 
@@ -126,6 +124,10 @@
 			<artifactId>proxool</artifactId>
 			<version>0.8.3</version>
 		</dependency>
-
+		<dependency>
+			<groupId>info.picocli</groupId>
+			<artifactId>picocli</artifactId>
+			<version>3.8.2</version>
+		</dependency>
 	</dependencies>
 </project>

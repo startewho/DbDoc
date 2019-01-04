@@ -11,6 +11,8 @@ import com.dbdoc.db.model.Column;
 import com.dbdoc.db.model.Table;
 import com.dbdoc.db.model.provider.TableProvider;
 
+import picocli.CommandLine;
+
 
 /***
  * 
@@ -32,9 +34,20 @@ public class PoiMain {
 	
 	public static void main(String args[]) throws IOException {
 		
+		CommandArgs command = CommandLine.populateCommand(new CommandArgs(), args);
+		
+		if (command.help) {
+			   CommandLine.usage(new CommandArgs(), System.out);
+			   return;
+		}
+		if (command.version) {
+			System.out.print("Version:0.0.1");
+			return;
+		}
+		
 		try {
 			List<Table> tables = TableProvider.getInstance().getAllTables();
-			genDoc(out_dir, tables);
+			genDoc(command.outPath, tables);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
