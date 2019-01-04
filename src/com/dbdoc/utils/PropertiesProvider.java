@@ -12,7 +12,7 @@ import java.util.Properties;
 import com.dbdoc.Constants;
 
 /***
- * ��ȡproperties�ļ�������
+ * ȡpropertiesļ
  * 
  * @author moonights
  *

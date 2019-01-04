@@ -12,8 +12,8 @@ import com.dbdoc.db.datasource.DataSourceProvider;
 import com.dbdoc.db.model.Table;
 
 /*******************************************************************************
- * 数据库模型提供类
- * 将数据库通用的行为（状态）抽取为一个抽象类
+ * 
+ * 
  * @author moonights
  * 
  * @date 2011-11-23
@@ -52,7 +52,7 @@ public abstract class DatabaseProvider {
 	}
 
 	/**
-	 * 执行一个Sql语句 返回查询的结果
+	 *
 	 * 
 	 * @param sql
 	 * @return
@@ -82,7 +82,7 @@ public abstract class DatabaseProvider {
 	}
 	
 	/**
-	 * 获取数据库结构信息
+	 * 
 	 * @return String
 	 */
 	public String getDatabaseStructureInfo() {
@@ -100,7 +100,7 @@ public abstract class DatabaseProvider {
 						.append(nl);
 			}
 		} catch (SQLException e2) {
-			sb.append("获取schemas出现错误...").append(nl);
+			sb.append("取schemas执...").append(nl);
 		} finally {
 			try {
 				schemaRs.close();
@@ -115,7 +115,7 @@ public abstract class DatabaseProvider {
 						.append(nl);
 			}
 		} catch (SQLException e2) {
-			sb.append("获取catalogs出现错误...").append(nl);
+			sb.append("取catalogs执...").append(nl);
 		} finally {
 			try {
 				catalogRs.close();
@@ -127,7 +127,7 @@ public abstract class DatabaseProvider {
 
 	/**
 	 * 
-	 * @param synonymName 同义词
+	 * @param synonymName 
 	 * @return
 	 */
 	public String getSynonymOwner(String synonymName) {
@@ -143,7 +143,7 @@ public abstract class DatabaseProvider {
 				ret = rs.getString(1);
 			} else {
 				String databaseStructure = getDatabaseStructureInfo();
-				throw new RuntimeException("synonymName： " + synonymName
+				throw new RuntimeException("synonymName " + synonymName
 						+ " not found." + databaseStructure);
 			}
 		} catch (SQLException e) {
@@ -167,7 +167,7 @@ public abstract class DatabaseProvider {
 	}
 
 	/***
-	 * 是否为Oracle
+	 * Oracle
 	 * @return
 	 */
 	public boolean isOracleDataBase() {
@@ -181,7 +181,7 @@ public abstract class DatabaseProvider {
 	}
 
 	/**
-	 * 获取Oracle 库中的某一表名
+	 *
 	 * @param table
 	 * @return
 	 */
@@ -192,7 +192,7 @@ public abstract class DatabaseProvider {
 	}
 
 	/**
-	 * 获取Oracle库中某一表中的某一列名
+	 * 
 	 * @param table
 	 * @param column
 	 * @return

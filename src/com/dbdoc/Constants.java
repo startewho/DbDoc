@@ -4,7 +4,7 @@ package com.dbdoc;
  * @author moonights
  */
 public interface Constants {
-	/** 用于全局变量名称的 String */
+	
 	public String PROPERTIES_FILE_NAME = "jdbc.properties";
 	public String JDBC_URL = "jdbc_url";
 	public String JDBC_USERNAME = "jdbc_username";

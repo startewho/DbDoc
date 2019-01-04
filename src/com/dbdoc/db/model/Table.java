@@ -15,25 +15,25 @@ import java.util.Set;
  */
 public class Table {
 
-	private int index;//从1开始
+	private int index;//
 
-	private String name; // ����
+	private String name; // 
 
-	private String remarks; // ע��
+	private String remarks; //
 
-	private String className; // ����
+	private String className; // 
 
-	private String type; // ������
+	private String type; // 
 
 	private String desc;
 
 	private String txt;
 
-	private Set<Column> columns = new LinkedHashSet();// �У�s��
+	private Set<Column> columns = new LinkedHashSet();// 
 
 	private List<Column> primaryKeyColumns = new ArrayList();
 
-	/** the name of the owner of the synonym if this table is a synonym */
+	
 	private String ownerSynonymName = null;
 
 	public String getClassName() {

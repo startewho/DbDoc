@@ -9,7 +9,7 @@ package com.dbdoc.utils;
 public class StringUtils {
 
 	/**
-	 * �������ַ������ĸ�ĳɴ�д
+	 * 
 	 * 
 	 * @param str
 	 * @return

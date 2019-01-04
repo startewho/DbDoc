@@ -13,9 +13,9 @@ public class FileUtils {
 	 * @param path
 	 *            文件路径
 	 * @param suffix
-	 *            后缀�? 为空则表示所有文�?
+	 *            后缀 为空则表示所有文
 	 * @param isdepth
-	 *            是否遍历子目�?
+	 *            是否遍历子目
 	 * @return list
 	 */
 	public static List<File> getListFiles(String path, String suffix, boolean isdepth) {
@@ -36,7 +36,7 @@ public class FileUtils {
 		} else {
 			String filePath = f.getAbsolutePath();
 			if (!suffix.equals("")) {
-				int begIndex = filePath.lastIndexOf("."); // �?���?��.(即后�?��前面�?)的索�?
+				int begIndex = filePath.lastIndexOf("."); //
 				String tempsuffix = "";
 
 				if (begIndex != -1) {

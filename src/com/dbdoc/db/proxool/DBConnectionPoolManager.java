@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import org.logicalcobwebs.proxool.configuration.JAXPConfigurator;
 import java.io.*;
 /****
- * jdbc下的proxool连接池类实现 jdbc连接交由proxool进行管理
+ * 
  * @author moonights
  * @version 1.0
  * @file DBConnectionPoolManager.java
@@ -20,7 +20,7 @@ public class DBConnectionPoolManager {
     private Connection con = null;
     
     /***************************************************************************
-	 * 构造函数
+	 * 
 	 * 
 	 * @return DBConnectionPoolManager
 	 */
@@ -29,9 +29,9 @@ public class DBConnectionPoolManager {
 		InputStream is = getClass().getResourceAsStream("/jdbc_proxool.xml");
 		try {
 			JAXPConfigurator.configure(new InputStreamReader(is), false);
-			log.info("<<<<<<proxool.xml配置文件加载成功!>>>>>>");
+			log.info("<<<<<<proxool.xml>>>>>>");
 		} catch (Exception e) {
-			log.info("<<<<<<proxool.xml配置文件加载失败!>>>>>>");
+			log.info("<<<<<<proxool.xml>>>>>>");
 		} finally {
 			try {
 				is.close();
@@ -41,7 +41,7 @@ public class DBConnectionPoolManager {
 	}
     
     /***************************************************************************
-	 * 获取实例 单态
+	 * 
 	 * 
 	 * @return DBConnectionPoolManager
 	 */
@@ -52,14 +52,14 @@ public class DBConnectionPoolManager {
 	}
     
     /***
-     * 获取链接
+     * 
      * @return
      */
     public Connection getConnection(){
         try{ 
         	con = DriverManager.getConnection("proxool.gxgljsyh");
         }catch(Exception e){
-        	log.info("-<<<<<<数据库链接失败,请检查proxool.xml文件配置是否正确!>>>>>>");
+        	log.info("-<<<<<<>>>>>>");
          	log.info(e.getMessage());
         }
         return con;
@@ -68,9 +68,9 @@ public class DBConnectionPoolManager {
     public static void main(String[] args){
     	try{
     		if (DBConnectionPoolManager.getInstance().getConnection()!=null){
-    			log.info("- <<<<<<链接成功！>>>>>>");
+    			log.info("- <<<<<<>>>>>");
         	}else{
-        		log.info("-<<<<<<链接失败！>>>>>>");
+        		log.info("-<<<<<<>>>>>>");
         	}
     	}catch(Exception ex){
     		ex.printStackTrace();

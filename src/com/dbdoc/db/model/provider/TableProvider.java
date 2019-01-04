@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import com.dbdoc.db.model.Table;
 import com.dbdoc.utils.PropertiesProvider;
 /***
- *  ��ݿ��ģ���ṩ��
+ *  
  * @author moonights
  *
  * @date 2011-11-23
@@ -27,7 +27,7 @@ public class TableProvider extends DatabaseProvider {
 	}
 	
 	/***
-	 * ��ȡ��ݿ������еı�
+	 * 
 	 * @param conn
 	 * @return
 	 * @throws SQLException
@@ -36,7 +36,7 @@ public class TableProvider extends DatabaseProvider {
 		DatabaseMetaData dbMetaData = super.getMetaData();
 		ResultSet rs = dbMetaData.getTables(PropertiesProvider.getNullIfBlank("jdbc_catalog"),PropertiesProvider.getNullIfBlank("jdbc_schema"), null, null);
 		List<Table> tables = new ArrayList<Table>();
-		log.info("<<<<<<<<<<<<<<<<<<<<<��ȡ���б?ʼ>>>>>>>>>>>>>>>>>");
+		log.info("<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
 		int i=0;
 		while(rs.next()) {
 			Table table = createTableModel(connection, rs);
@@ -45,7 +45,7 @@ public class TableProvider extends DatabaseProvider {
 				tables.add(table);
 			}
 		}
-		log.info("<<<<<<<<<<<<<<<<<<<<<��ȡ���б����>>>>>>>>>>>>>>>>>");
+		log.info("<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
 		return tables;
 	}
 	
@@ -67,13 +67,13 @@ public class TableProvider extends DatabaseProvider {
 			table.setRemarks(remarks);
 			
 			if ("VIEW".equals(tableType)) {
-				log.info("ȥ����ͼ......");
+				log.info("");
 				return null;
 			}
 			
 			/**sql server**/
 			if ("SYSTEM_TABLE".equals(tableType)) {
-				log.info("ȥ��ϵͳ��......");
+				log.info("");
 				return null;
 			}
 			
@@ -83,17 +83,17 @@ public class TableProvider extends DatabaseProvider {
 			}
 
 			if ("BIN".equals(realTableName.substring(0,3))&&isOracleDataBase()) {
-				log.info("ȥ��orcal recyclebin�еı�(10g)......");
+				log.info("");
 				return null;
 			}
 			ColumnProvider.getInstance().createTableColumnsModel(table);
-			//��ȡ����Ϣ��,����������г�ʼ������
+			//
 			table.initPrimaryKeyColumns();
 //			table.initExportedKeys(conn.getMetaData());
 //			table.initImportedKeys(conn.getMetaData());
 			return table;
 		}catch(SQLException e) {
-			throw new RuntimeException("error��������:"+realTableName+"�����쳣.\n",e);
+			throw new RuntimeException("error:"+realTableName+".\n",e);
 		}
 	}
 }

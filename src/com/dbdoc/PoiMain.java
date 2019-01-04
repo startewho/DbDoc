@@ -1,25 +1,16 @@
 package com.dbdoc;
 
-import java.io.ByteArrayOutputStream;
 import java.nio.file.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.SortedSet;
 import org.apache.log4j.Logger;
 import org.apache.poi.xwpf.usermodel.*;
-import org.openxmlformats.schemas.wordprocessingml.x2006.*;
-
 import com.dbdoc.db.model.Column;
 import com.dbdoc.db.model.Table;
 import com.dbdoc.db.model.provider.TableProvider;
-import com.dbdoc.utils.FreemarkerUtils;
 
-import sun.management.counter.Variability;
 
 /***
  * 
@@ -38,6 +29,7 @@ public class PoiMain {
 	public static final String template_file = "template/doc.xml";
 	public static final String out_dir = "c:\\doc\\dbdoc.docx";
 
+	
 	public static void main(String args[]) throws IOException {
 		
 		try {

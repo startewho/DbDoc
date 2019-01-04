@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 /***
- * ��ȡproperties�ļ�������
+ * ȡpropertiesļ
  * @author moonights
  * @date 2011-11-23
  */

@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
 
 /***
  * 
- * 文件工具类
+ * 
  * 
  * @author moonights
  *
@@ -21,7 +21,7 @@ import java.util.StringTokenizer;
 public class FileUtils {
 
 	/**
-	 * 获得path路径下的文件或文件夹对象, 如果不存在自动创建
+	 * 
 	 * @param path
 	 * @return
 	 */
@@ -51,7 +51,7 @@ public class FileUtils {
 	}
 
 	/**
-	 * 文件复制
+	 * 募
 	 * @param source
 	 * @param copy
 	 */
@@ -88,13 +88,13 @@ public class FileUtils {
 	}
 
 	/**
-	 * 文件夹复制
+	 * 募懈
 	 * @param oldPath
 	 * @param newPath
 	 */
 	public static void copyFileFolder(String oldPath, String newPath) {
 		try {
-			(new File(newPath)).mkdirs(); //如果文件夹不存在  则建立新文件夹  
+			(new File(newPath)).mkdirs(); //募胁  募  
 			File newfile = new File(oldPath);
 			String[] file = newfile.list();
 			File temp = null;
@@ -118,7 +118,7 @@ public class FileUtils {
 					output.close();
 					input.close();
 				}
-				if (temp.isDirectory()) {//如果是子文件夹  
+				if (temp.isDirectory()) {//募  
 					copyFileFolder(oldPath + "/" + file[i], newPath + "/"
 							+ file[i]);
 				}
