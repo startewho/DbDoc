@@ -37,7 +37,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.dbdoc.PoiMain</mainClass>
+							<mainClass>com.dbdoc.App</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>
@@ -45,10 +45,7 @@
 					</archive>
 
 					<finalName>dbdoc</finalName>
-					<excludes>
-						<exclude>**/*.properties</exclude>
-						<exclude>**/*.xml</exclude>
-					</excludes>
+					
 				</configuration>
 			</plugin>
 			<plugin>

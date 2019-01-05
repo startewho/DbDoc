@@ -1,5 +1,6 @@
 package com.dbdoc.utils;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -119,6 +120,12 @@ public class PropertiesUtils {
 					input.close();
 				}
 			}
+		}
+		
+		//读取当前路径运行路径下的
+		if (properties.size()==0) {
+			 FileInputStream propFile =new FileInputStream(resourceName);
+			       properties.load(propFile);
 		}
 		return properties;
 	}

@@ -9,34 +9,33 @@ import java.util.SortedSet;
 
 import org.apache.log4j.Logger;
 
+import com.dbdoc.db.model.Table;
 import com.dbdoc.db.model.provider.TableProvider;
 import com.dbdoc.utils.FreemarkerUtils;
 
 /***
  * 
- * 数据库设计文档生成器
+ * 文档输出
  * 
- * @author kevin zhang
+ * @author justcheng
  *
- * @date 2011-11-23
+ * @date 2019-01-05
  */
-public class DocCommand {
-	public static final Logger log = Logger.getLogger(DocMain.class);
-	public static final String template_file = "template/doc.xml";
-	public static final String out_dir = "c:\\doc\\dbdoc.doc";
+public abstract class DocOutput {
 
-	public  void Action(String args[]) throws IOException {
-		Map propMap = new HashMap();
-		try {
-			List tables = TableProvider.getInstance().getAllTables();
-			propMap.put("tableList", tables);
-			FreemarkerUtils.writeTemplateToFile(DocMain.template_file, propMap,
-					DocMain.out_dir);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		System.out.println("生成完毕!!!");
-		// 打开生成的文件
-		//Runtime.getRuntime().exec("cmd.exe /c start " + out_dir);
+	private OutType type = OutType.WORD;
+
+	public DocOutput(OutType outType) {
+			type=outType;
 	}
+
+	public OutType geType() {
+		return type;
+
+	}
+
+	
+	public abstract void genDoc(String filePath, List<Table> dbTables);
 }
+
+
