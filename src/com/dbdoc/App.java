@@ -33,7 +33,10 @@ public class App {
 	
 	public static void main(String args[]) throws IOException {
 		
-		CommandArgs command = CommandLine.populateCommand(new CommandArgs(), args);
+		CommandArgs command = new CommandArgs();
+		
+		new CommandLine(command).setCaseInsensitiveEnumValuesAllowed(true).parseArgs(args);
+		
 		
 		if (command.help) {
 			ColorScheme colorScheme = new ColorScheme()
@@ -42,7 +45,7 @@ public class App {
 			        .parameters  (Style.fg_yellow)
 			        .optionParams(Style.italic);
 
-			   CommandLine.usage(new CommandArgs(), System.out,colorScheme);
+			   CommandLine.usage(command, System.out,colorScheme);
 			   return;
 		}
 		if (command.version) {

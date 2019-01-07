@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Paths;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Set;
@@ -122,8 +125,8 @@ public class PropertiesUtils {
 			}
 		}
 		
-		//读取当前路径运行路径下的
-		if (properties.size()==0) {
+		//优先读取当前路径运行路径下的
+		if (Files.exists(Paths.get(resourceName),LinkOption.NOFOLLOW_LINKS)) {
 			 FileInputStream propFile =new FileInputStream(resourceName);
 			       properties.load(propFile);
 		}
